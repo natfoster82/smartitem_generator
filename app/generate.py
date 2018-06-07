@@ -10,6 +10,8 @@ item_id = os.environ.get('ITEM_ID') or input('Item ID: ')
 n_str = os.environ.get('NUM_INSTANCES') or input('How many instances would you like to generate? ')
 n = int(n_str)
 
+print(item_id, n_str)
+
 headers = {
     'Authorization': 'Bearer {0}'.format(access_token)
 }

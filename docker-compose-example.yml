@@ -5,8 +5,8 @@ services:
     environment:
       URL_BASE: 'https://smartstage.caveon.com'
       ACCESS_TOKEN: '<access_token>'
-      ITEM_ID: '5177670f-d09e-4baf-9046-b253e35213b4'
-      NUM_INSTANCES: 10
+      ITEM_ID: '5b8d7130-0279-4e92-9dd4-2cb6ff9a5943'
+      NUM_INSTANCES: 1
     stdin_open: 'true'
     tty: 'true'
     volumes:
