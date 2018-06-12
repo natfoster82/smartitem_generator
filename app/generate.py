@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from uuid import uuid4
 from pprint import pprint
 
 import requests
@@ -23,7 +24,8 @@ template_ids = item_json['templateIds']
 
 gen_url = '{0}/api/v1/items/{1}/generate'.format(url_base, item_id)
 gen_payload = {
-    'n': n
+    'n': n,
+    'externalIds': [str(uuid4()) for x in range(n)]
 }
 gen_request = requests.post(gen_url, json=gen_payload, headers=headers)
 gen_json = gen_request.json()
