@@ -5,7 +5,7 @@ from pprint import pprint
 
 import requests
 
-url_base = os.environ.get('URL_BASE') or 'https://smart.caveon.com'
+url_base = os.environ.get('URL_BASE') or 'https://smartstage.caveon.com'
 access_token = os.environ.get('ACCESS_TOKEN') or input('Access token: ')
 item_id = os.environ.get('ITEM_ID') or input('Item ID: ')
 n_str = os.environ.get('NUM_INSTANCES') or input('How many instances would you like to generate? ')
@@ -35,6 +35,6 @@ dirname = 'gen/{0}'.format(datetime.now().isoformat())
 os.makedirs(dirname)
 
 for result in gen_json['results']:
-    filename = '{0}/{1}.txt'.format(dirname, result['id'])
+    filename = '{0}/{1}.xml'.format(dirname, result['id'])
     with open(filename, 'w') as f:
-        f.write(result['value'])
+        f.write(result['value'].strip())
